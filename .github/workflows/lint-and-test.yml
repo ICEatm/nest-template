@@ -3,7 +3,7 @@ name: Lint and Auto-Commit
 on:
   push:
     branches:
-      - main  # Change this to your main branch name
+      - master
 
 jobs:
   lint-and-commit:
