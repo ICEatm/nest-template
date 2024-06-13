@@ -25,4 +25,4 @@ jobs:
       - name: Commit linted files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "style(app): Applied automatic linter"
+          commit_message: "💄 Applied linter"
