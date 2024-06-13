@@ -1,3 +1,4 @@
+import { MessageKeys } from '@config/config-keys.config';
 import { ConfigService } from '@nestjs/config';
 import { Injectable } from '@nestjs/common';
 
@@ -8,7 +9,7 @@ export class IndexService {
   getIndex() {
     return {
       success: true,
-      message: this.configService.get('default.messages.indexWelcome'),
+      message: this.configService.get(MessageKeys.INDEX_WELCOME),
     };
   }
 }
