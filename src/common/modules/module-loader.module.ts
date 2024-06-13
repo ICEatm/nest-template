@@ -1,4 +1,4 @@
-import { IndexModule } from 'src/modules/index/index.module';
+import { IndexModule } from '@modules/index/index.module';
 import { Module } from '@nestjs/common';
 
 /**

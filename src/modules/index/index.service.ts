@@ -8,7 +8,7 @@ export class IndexService {
   getIndex() {
     return {
       success: true,
-      message: this.configService.get('default.messages.index_welcome'),
+      message: this.configService.get('default.messages.indexWelcome'),
     };
   }
 }

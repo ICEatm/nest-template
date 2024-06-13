@@ -1,4 +1,4 @@
-import DefaultConfig from 'config/default.config';
+import DefaultConfig from '@config/default.config';
 import { ConfigModule } from '@nestjs/config';
 import { Module } from '@nestjs/common';
 

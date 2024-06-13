@@ -1,12 +1,12 @@
 import { Injectable, Logger, Inject } from '@nestjs/common';
-import DefaultConfig from 'config/default.config';
+import DefaultConfig from '@config/default.config';
 import { ConfigType } from '@nestjs/config';
 import { promisify } from 'util';
 import * as path from 'path';
 import * as fs from 'fs';
 
 /**
- * Service responsible for logging messages to a file asynchronously.
+ * Service responsible for logging messages to a file.
  */
 @Injectable()
 export class LoggerService {
@@ -14,6 +14,10 @@ export class LoggerService {
   private readonly appendFileAsync = promisify(fs.appendFile);
   private logsPath: string;
 
+  /**
+   * Constructs a new LoggerService instance.
+   * @param defaultConfig - Configuration object injected via Nest.js dependency injection.
+   */
   constructor(
     @Inject(DefaultConfig.KEY)
     private readonly defaultConfig: ConfigType<typeof DefaultConfig>,
@@ -23,9 +27,9 @@ export class LoggerService {
   }
 
   /**
-   * Writes a log message to a log file asynchronously.
-   * @param message - The log message to be written to the file.
-   * @returns A Promise that resolves when the message is successfully written.
+   * Writes a log message to the log file asynchronously.
+   * @param message - The message to be logged.
+   * @returns A promise that resolves when the log message is written successfully, or rejects if an error occurs.
    */
   async writeLogToFile(message: string): Promise<void> {
     if (!this.logsPath) {
@@ -44,8 +48,9 @@ export class LoggerService {
   }
 
   /**
-   * Ensures the logs folder exists, creating it if necessary.
-   * @returns A Promise that resolves when the logs folder is ensured to exist.
+   * Initializes the logs folder if it doesn't exist.
+   * This method is called during service construction.
+   * @returns A promise that resolves when the logs folder is initialized, or rejects if an error occurs.
    */
   private async initializeLogsFolder(): Promise<void> {
     try {
@@ -60,8 +65,8 @@ export class LoggerService {
 
   /**
    * Checks if a directory exists.
-   * @param dirPath - The path of the directory to check.
-   * @returns A Promise that resolves to true if the directory exists, false otherwise.
+   * @param dirPath - The path to the directory.
+   * @returns A promise that resolves with a boolean indicating whether the directory exists or not.
    */
   private directoryExists(dirPath: string): Promise<boolean> {
     return new Promise((resolve) => {
@@ -73,8 +78,8 @@ export class LoggerService {
 
   /**
    * Creates a directory.
-   * @param dirPath - The path of the directory to create.
-   * @returns A Promise that resolves when the directory is successfully created.
+   * @param dirPath - The path to the directory to be created.
+   * @returns A promise that resolves when the directory is created successfully, or rejects if an error occurs.
    */
   private createDirectory(dirPath: string): Promise<void> {
     return new Promise((resolve, reject) => {

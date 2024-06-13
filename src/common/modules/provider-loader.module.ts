@@ -1,7 +1,7 @@
-import { TransformInterceptor } from 'src/core/interceptors/transform.interceptor';
-import { AllExceptionFilter } from 'src/common/filters/all-exception.filter';
+import { TransformInterceptor } from '@core/interceptors/transform.interceptor';
+import { AllExceptionFilter } from '@common/filters/all-exception.filter';
 import { APP_FILTER, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
-import { ValidationPipe } from 'src/common/pipes/validation.pipe';
+import { ValidationPipe } from '@common/pipes/validation.pipe';
 import { Module } from '@nestjs/common';
 
 /**
