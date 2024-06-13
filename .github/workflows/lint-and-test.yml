@@ -1,0 +1,28 @@
+name: Lint and Auto-Commit
+
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch name
+
+jobs:
+  lint-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install  # Replace with your package manager if different
+
+      - name: Lint code
+        run: npm run lint  # Replace with your linting command
+
+      - name: Test code
+        run: npm run test
+
+      - name: Commit linted files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "style(app): Applied automatic linter"
