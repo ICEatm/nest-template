@@ -13,39 +13,59 @@ This repository is a NestJS application template with essential features and bes
 ## Project Structure
 
 ```
-📦src
- ┣ 📂common
- ┃ ┣ 📂filters
- ┃ ┃ ┣ 📜all-exception.filter.spec.ts
- ┃ ┃ ┗ 📜all-exception.filter.ts
- ┃ ┣ 📂middlewares
- ┃ ┃ ┗ 📜logger.middleware.ts
+📦nest-boiler
+ ┣ 📂.github
+ ┃ ┗ 📂workflows
+ ┃ ┃ ┗ 📜lint-and-test.yml
+ ┣ 📂config
+ ┃ ┗ 📜default.config.ts
+ ┣ 📂src
+ ┃ ┣ 📂common
+ ┃ ┃ ┣ 📂filters
+ ┃ ┃ ┃ ┣ 📜all-exception.filter.spec.ts
+ ┃ ┃ ┃ ┗ 📜all-exception.filter.ts
+ ┃ ┃ ┣ 📂middlewares
+ ┃ ┃ ┃ ┣ 📜logger.middleware.spec.ts
+ ┃ ┃ ┃ ┗ 📜logger.middleware.ts
+ ┃ ┃ ┣ 📂modules
+ ┃ ┃ ┃ ┣ 📜config-loader.module.ts
+ ┃ ┃ ┃ ┣ 📜middleware-loader.module.ts
+ ┃ ┃ ┃ ┣ 📜module-loader.module.ts
+ ┃ ┃ ┃ ┗ 📜provider-loader.module.ts
+ ┃ ┃ ┣ 📂pipes
+ ┃ ┃ ┃ ┣ 📜parse-int.pipe.spec.ts
+ ┃ ┃ ┃ ┣ 📜parse-int.pipe.ts
+ ┃ ┃ ┃ ┣ 📜validation.pipe.spec.ts
+ ┃ ┃ ┃ ┗ 📜validation.pipe.ts
+ ┃ ┃ ┗ 📂services
+ ┃ ┃ ┃ ┗ 📜logger.service.ts
+ ┃ ┣ 📂core
+ ┃ ┃ ┣ 📂interceptors
+ ┃ ┃ ┃ ┣ 📜transform.interceptor.spec.ts
+ ┃ ┃ ┃ ┗ 📜transform.interceptor.ts
+ ┃ ┃ ┗ 📜core.module.ts
  ┃ ┣ 📂modules
- ┃ ┃ ┣ 📜config-loader.module.ts
- ┃ ┃ ┣ 📜middleware-loader.module.ts
- ┃ ┃ ┣ 📜module-loader.module.ts
- ┃ ┃ ┗ 📜provider-loader.module.ts
- ┃ ┣ 📂pipes
- ┃ ┃ ┣ 📜parse-int.pipe.spec.ts
- ┃ ┃ ┣ 📜parse-int.pipe.ts
- ┃ ┃ ┣ 📜validation.pipe.spec.ts
- ┃ ┃ ┗ 📜validation.pipe.ts
- ┃ ┗ 📂services
- ┃ ┃ ┗ 📜logger.service.ts
- ┣ 📂core
- ┃ ┣ 📂interceptors
- ┃ ┃ ┣ 📜transform.interceptor.spec.ts
- ┃ ┃ ┗ 📜transform.interceptor.ts
- ┃ ┗ 📜core.module.ts
- ┣ 📂modules
- ┃ ┗ 📂index
- ┃ ┃ ┣ 📜index.controller.spec.ts
- ┃ ┃ ┣ 📜index.controller.ts
- ┃ ┃ ┣ 📜index.module.ts
- ┃ ┃ ┣ 📜index.service.spec.ts
- ┃ ┃ ┗ 📜index.service.ts
- ┣ 📜app.module.ts
- ┗ 📜main.ts
+ ┃ ┃ ┗ 📂index
+ ┃ ┃ ┃ ┣ 📜index.controller.spec.ts
+ ┃ ┃ ┃ ┣ 📜index.controller.ts
+ ┃ ┃ ┃ ┣ 📜index.module.ts
+ ┃ ┃ ┃ ┣ 📜index.service.spec.ts
+ ┃ ┃ ┃ ┗ 📜index.service.ts
+ ┃ ┣ 📜app.module.ts
+ ┃ ┗ 📜main.ts
+ ┣ 📂test
+ ┃ ┣ 📜app.e2e-spec.ts
+ ┃ ┗ 📜jest-e2e.json
+ ┣ 📜.eslintrc.js
+ ┣ 📜.gitignore
+ ┣ 📜.prettierrc
+ ┣ 📜jest.config.js
+ ┣ 📜nest-cli.json
+ ┣ 📜package-lock.json
+ ┣ 📜package.json
+ ┣ 📜README.md
+ ┣ 📜tsconfig.build.json
+ ┗ 📜tsconfig.json
 ```
 
 ## Getting Started
