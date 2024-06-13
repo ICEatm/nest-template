@@ -60,7 +60,7 @@ This repository is a NestJS application template with essential features and bes
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/ICEatm/nestjs-template.git
+    git clone https://github.com/ICEatm/nest-template.git
     cd nestjs-template
     ```
 
