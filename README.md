@@ -38,6 +38,8 @@ This repository is a NestJS application template with essential features and bes
  ┃ ┃ ┃ ┣ 📜validation.pipe.spec.ts
  ┃ ┃ ┃ ┗ 📜validation.pipe.ts
  ┃ ┃ ┗ 📂services
+ ┃ ┃ ┃ ┣ 📜http.service.spec.ts
+ ┃ ┃ ┃ ┣ 📜http.service.ts
  ┃ ┃ ┃ ┗ 📜logger.service.ts
  ┃ ┣ 📂core
  ┃ ┃ ┣ 📂interceptors
