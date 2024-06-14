@@ -6,7 +6,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   // Set `/api` as the global prefix, except for the `/` index page
-  app.setGlobalPrefix('api', { exclude: ['/'] });
+  app.setGlobalPrefix((process.env.PREFIX as string) ?? 'api', {
+    exclude: ['/'],
+  });
 
   /**
    * Enable versioning with the URI type.
