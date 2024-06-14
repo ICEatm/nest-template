@@ -8,4 +8,6 @@ module.exports = {
     '^@common/(.*)$': '<rootDir>/src/common/$1',
     '^@modules/(.*)$': '<rootDir>/src/modules/$1',
   },
+  testPathIgnorePatterns: ['/node_modules/', '/dist/'],
+  testRegex: '.*\\.spec\\.ts$',
 };

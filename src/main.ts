@@ -5,15 +5,14 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Set `/api` as the global prefix
-  // except for the `/` index page
+  // Set `/api` as the global prefix, except for the `/` index page
   app.setGlobalPrefix('api', { exclude: ['/'] });
 
   /**
-   * Enable versioning by setting it the type to uri
-   * To use this import `Version` from `@nestjs/common`
+   * Enable versioning with the URI type.
    *
-   * To call it on the browser request
+   * Example usage:
+   * To call the endpoint in the browser:
    * http://localhost:<PORT>/api/v1/cats
    *
    * @example
@@ -22,13 +21,16 @@ async function bootstrap() {
    *
    * @Controller('cats')
    * export class IndexController {
-   *  @Get()
-   *  @Version('1')
-   *  getIndex() {
-   *    return 'Cats';
-   *  }
+   *   @Get()
+   *   @Version('1')
+   *   getIndex() {
+   *     return 'Cats';
+   *   }
    * }
    * ```
+   *
+   * For more information visit this resource
+   * @see https://docs.nestjs.com/techniques/versioning
    */
   app.enableVersioning({ type: VersioningType.URI });
 
