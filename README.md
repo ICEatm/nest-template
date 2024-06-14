@@ -56,6 +56,7 @@ This repository is a NestJS application template with essential features and bes
  ┣ 📂test
  ┃ ┣ 📜app.e2e-spec.ts
  ┃ ┗ 📜jest-e2e.json
+ ┣ 📜.env.example
  ┣ 📜.eslintrc.js
  ┣ 📜.gitignore
  ┣ 📜.prettierrc
@@ -91,6 +92,7 @@ This repository is a NestJS application template with essential features and bes
     # or
     yarn install
     ```
+3. Rename `.env.example` to `.env` and fill it with your desired settings
 
 ### Running the Application
 
