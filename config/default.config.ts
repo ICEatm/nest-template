@@ -1,3 +1,4 @@
+import * as Messages from './messages.json';
 import { registerAs } from '@nestjs/config';
 import { join } from 'node:path';
 
@@ -14,7 +15,7 @@ const messagesConfig = {
   /**
    * Welcome message for the index route.
    */
-  indexWelcome: 'NestJS Boilerplate by ICEatm',
+  indexWelcome: Messages.en.indexWelcome,
 };
 
 const applicationConfig = {
