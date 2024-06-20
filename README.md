@@ -9,6 +9,7 @@ This repository is a NestJS application template with essential features and bes
 - **Data Transformation**: Inbuilt data transformation which maps responses in a data object.
 - **DTO Validation**: Inbuilt validation for Data Transfer Objects (DTOs) to ensure data integrity.
 - **Global Exception Handler**: Inbuilt global exception handler which handles all kinds of exception.
+- **Swagger Support**: Swagger already inbuilt and ready to use. Default path is set to `/docs`
 
 ## Project Structure
 
