@@ -71,7 +71,11 @@ async function bootstrap() {
       .build();
 
     const swaggerDocument = SwaggerModule.createDocument(app, swaggerConfig);
-    SwaggerModule.setup((process.env.SWAGGER_BASE_PATH as string ?? '/docs'), app, swaggerDocument);
+    SwaggerModule.setup(
+      (process.env.SWAGGER_BASE_PATH as string) ?? '/docs',
+      app,
+      swaggerDocument,
+    );
   };
 
   setupSwagger(app);
