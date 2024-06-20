@@ -1,4 +1,5 @@
-import { VersioningType } from '@nestjs/common';
+import { VersioningType, INestApplication } from '@nestjs/common';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
@@ -36,6 +37,44 @@ async function bootstrap() {
    */
   app.enableVersioning({ type: VersioningType.URI });
 
+  /**
+   * Sets up Swagger configuration and documentation for the application.
+   *
+   * This function initializes the Swagger documentation for the application using the SwaggerModule
+   * and DocumentBuilder from the NestJS framework. It configures the Swagger document with the
+   * title, description, and version, which can be provided through environment variables or default
+   * to specified strings if not provided.
+   *
+   * @remarks
+   * The Swagger documentation is an essential tool for documenting and testing the API. It provides
+   * a user-friendly interface to explore the endpoints, parameters, and responses. This setup ensures
+   * that the Swagger documentation is available at the `/docs` endpoint of the application.
+   *
+   * @example
+   * ```typescript
+   * const app = await NestFactory.create(AppModule);
+   * setupSwagger(app);
+   * await app.listen(3000);
+   * ```
+   *
+   * @param app - The NestJS application instance.
+   *
+   * @returns void
+   */
+  const setupSwagger = (app: INestApplication): void => {
+    const swaggerConfig = new DocumentBuilder()
+      .setTitle((process.env.SWAGGER_TITLE as string) ?? 'Swagger Title')
+      .setDescription(
+        (process.env.SWAGGER_DESCRIPTION as string) ?? 'Swagger Description',
+      )
+      .setVersion((process.env.SWAGGER_VERSION as string) ?? '1.0')
+      .build();
+
+    const swaggerDocument = SwaggerModule.createDocument(app, swaggerConfig);
+    SwaggerModule.setup('docs', app, swaggerDocument);
+  };
+
+  setupSwagger(app);
   await app.listen(3000);
 }
 bootstrap();
